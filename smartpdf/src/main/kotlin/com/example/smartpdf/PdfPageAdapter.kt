@@ -9,7 +9,6 @@ import android.graphics.Paint
 import android.graphics.pdf.PdfRenderer
 import android.os.ParcelFileDescriptor
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
@@ -87,7 +86,7 @@ internal class PdfPageAdapter(
      */
     fun setNightMode(enabled: Boolean) {
         nightMode = enabled
-        notifyDataSetChanged()
+        notifyItemRangeChanged(0, itemCount)
     }
 
     fun isNightMode(): Boolean = nightMode
